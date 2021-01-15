@@ -3,7 +3,7 @@ import { getAllCharacters, getCharacterInfo } from "../../util/util";
 export default function CharPage({ charInfo }) {
     return(
         <div>
-            <h1>{charInfo.name}({charInfo.nickname})</h1>
+            <h1>{charInfo.name} ({charInfo.nickname})</h1>
             <img src={charInfo.img} alt={charInfo.name} />
         </div>
     )
