@@ -8,6 +8,8 @@ import { BsArrow90DegLeft, BsArrow90DegRight } from 'react-icons/bs'
 
 export default function CharPage({ charInfo }) {
 
+    console.log(charInfo.occupation);
+
     return(
         <div className={styles.charPage}>
             <img src={charInfo.img} alt={charInfo.name} />
@@ -73,16 +75,15 @@ export default function CharPage({ charInfo }) {
 }
 
 export async function getStaticPaths() {
-    /* const chars = await getAllCharacters()
+    const chars = await getAllCharacters()
     const paths = []
     chars.forEach(char => {
         paths.push({ params: { id: String(char.char_id) } })
-    }) */
-    const paths = [{ params: { id: '1' } }]
+    })
 
     return {
         paths,
-        fallback: true 
+        fallback: false 
       };    
 }
 
