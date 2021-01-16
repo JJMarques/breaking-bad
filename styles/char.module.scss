@@ -1,0 +1,61 @@
+.charPage {
+    display: flex;
+
+    img {
+        height: 100vh;
+        width: 40%;
+        object-fit: cover;
+    }
+
+    a {
+        color: rgb(103, 134, 117);
+        text-decoration: none;
+        margin-bottom: 1em;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: white
+        }
+    }
+
+    .charInfo {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            font-weight: 200;
+            opacity: 0.6;
+        }
+    }
+
+    .occupationsList {
+        margin-top: 2em;
+        display: flex;
+
+        .occupation {
+            margin-left: 1em;
+            padding: 0.5em 1em;
+            border-radius: 20px;
+            border: 1px solid rgb(103, 134, 117);
+            text-align: center;
+
+            h2 {
+                font-weight: 400;
+                font-size: 0.9em;
+            }
+        }
+    }
+
+    .birthday {
+        margin-top: 2em;
+        display: flex;
+        align-items: center;
+        font-weight: 200;
+        font-size: 1.4em;
+    }
+}
