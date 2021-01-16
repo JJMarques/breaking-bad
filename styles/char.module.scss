@@ -27,6 +27,10 @@
         align-items: center;
         justify-content: center;
 
+        h1 {
+            text-align: center;
+        }
+
         span {
             font-weight: 200;
             opacity: 0.6;
@@ -57,5 +61,61 @@
         align-items: center;
         font-weight: 200;
         font-size: 1.4em;
+    }
+
+    .navigation {
+        margin-top: 4em;
+        display: flex;
+        align-items: center;
+        
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .charPage {
+        flex-direction: column;
+
+        img {
+            height: 500px;
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 2em;
+        }
+
+        .charInfo {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        .occupationsList {
+            flex-direction: column;
+    
+            .occupation {
+                margin-top: 10px;
+                padding: 0.7em 1.4em;
+                border-radius: 20px;
+                border: 1px solid rgb(103, 134, 117);
+                text-align: center;
+    
+                h2 {
+                    font-size: 0.8em;
+                }
+            }
+        }
+
+        .birthday {
+            font-size: 1.2em;
+        }
+
+        .navigation {
+            margin-bottom: 2em;
+        }
     }
 }

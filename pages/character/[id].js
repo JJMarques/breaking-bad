@@ -4,6 +4,7 @@ import { getAllCharacters, getCharacterInfo } from "../../util/util";
 import { MdKeyboardReturn } from 'react-icons/md'
 import { BiCake } from 'react-icons/bi'
 import { ImHeart, ImHeartBroken } from 'react-icons/im'
+import { BsArrow90DegLeft, BsArrow90DegRight } from 'react-icons/bs'
 
 export default function CharPage({ charInfo }) {
 
@@ -49,6 +50,23 @@ export default function CharPage({ charInfo }) {
                             <ImHeartBroken style={{ marginRight: '10px' }} /> Dead
                         </h3>
                     )}
+                <div className={styles.navigation}>
+                    {charInfo.char_id > 1 && (
+                        <Link href={`/character/${String(charInfo.char_id - 1)}`}>
+                            <a>
+                                <BsArrow90DegLeft style={{ marginRight: '10px' }} /> PREVIOUS
+                            </a>
+                        </Link>
+                    )}
+                    {charInfo.char_id < 57 && (
+                        <Link href={`/character/${String(charInfo.char_id + 1)}`}>
+                            <a style={{ marginLeft: '30px' }}>
+                                NEXT <BsArrow90DegRight style={{ marginLeft: '10px' }} />
+                            </a>
+                        </Link>
+                    )}
+                    
+                </div>
             </div>
         </div>
     )
