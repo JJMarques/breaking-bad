@@ -6,7 +6,7 @@ import { BiCake } from 'react-icons/bi'
 import { ImHeart, ImHeartBroken } from 'react-icons/im'
 import { BsArrow90DegLeft, BsArrow90DegRight } from 'react-icons/bs'
 
-export default function CharPage({ charInfo }) {
+export default function CharPage({ charInfo, charOcuppations }) {
     return(
         <div className={styles.charPage}>
             <div className={styles.imageContainer}>
@@ -20,7 +20,7 @@ export default function CharPage({ charInfo }) {
                 </Link>
                 <h1>{charInfo.name} <span>({charInfo.nickname})</span></h1>
                 <div className={styles.occupationsList}>
-                {charInfo.occupation.map((ocuppation, key) => (
+                {charOcuppations.map((ocuppation, key) => (
                     <div key={key} className={styles.occupation}>
                         <h2 >{ocuppation}</h2>
                     </div>
@@ -91,7 +91,8 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
-            charInfo
+            charInfo,
+            charOcuppations: charInfo.occupation
         }
     }
 }
