@@ -7,12 +7,11 @@ import { ImHeart, ImHeartBroken } from 'react-icons/im'
 import { BsArrow90DegLeft, BsArrow90DegRight } from 'react-icons/bs'
 
 export default function CharPage({ charInfo }) {
-
-    console.log(charInfo.occupation);
-
     return(
         <div className={styles.charPage}>
-            <img src={charInfo.img} alt={charInfo.name} />
+            <div className={styles.imageContainer}>
+                <img src={charInfo.img} alt={charInfo.name} />
+            </div>
             <div className={styles.charInfo}>
                 <Link href="/">
                     <a>

@@ -1,10 +1,15 @@
 .charPage {
     display: flex;
 
-    img {
+    .imageContainer {
         height: 100vh;
-        width: 40%;
-        object-fit: cover;
+        width: 60%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 
     a {
@@ -75,11 +80,16 @@
     .charPage {
         flex-direction: column;
 
-        img {
-            height: 500px;
+        .imageContainer {
+            height: 50vh;
             width: 100%;
-            object-fit: cover;
             margin-bottom: 2em;
+    
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
         }
 
         .charInfo {
