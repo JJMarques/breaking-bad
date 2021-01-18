@@ -87,12 +87,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const charInfo = await getCharacterInfo(params.id)
+    const { charInfo, charOcuppations } = await getCharacterInfo(params.id)
 
     return {
         props: {
             charInfo,
-            charOcuppations: charInfo.occupation
+            charOcuppations
         }
     }
 }
