@@ -73,7 +73,7 @@ export default function CharPage({ charInfo, charOcuppations }) {
     )
 }
 
-export async function getStaticPaths() {
+/* export async function getStaticPaths() {
     const chars = await getAllCharacters()
     const paths = []
     chars.forEach(char => {
@@ -89,6 +89,16 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const { charInfo, charOcuppations } = await getCharacterInfo(params.id)
 
+    return {
+        props: {
+            charInfo,
+            charOcuppations
+        }
+    }
+} */
+
+export async function getServerSideProps({ query }) {
+    const { charInfo, charOcuppations } = await getCharacterInfo(query.id)
     return {
         props: {
             charInfo,
