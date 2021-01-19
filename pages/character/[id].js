@@ -1,17 +1,12 @@
 import Link from 'next/link'
 import styles from '../../styles/char.module.scss'
+import { getAllCharacters, getCharacterInfo } from "../../util/util";
 import { MdKeyboardReturn } from 'react-icons/md'
 import { BiCake } from 'react-icons/bi'
 import { ImHeart, ImHeartBroken } from 'react-icons/im'
 import { BsArrow90DegLeft, BsArrow90DegRight } from 'react-icons/bs'
-import DefaultErrorPage from 'next/error'
 
-export default function CharPage({ charInfo, charOcuppations, error }) {
-
-    if(error) {
-        return <DefaultErrorPage statusCode={404} />
-    }
-
+export default function CharPage({ charInfo, charOcuppations }) {
     return(
         <div className={styles.charPage}>
             <div className={styles.imageContainer}>
@@ -78,33 +73,6 @@ export default function CharPage({ charInfo, charOcuppations, error }) {
     )
 }
 
-export async function getStaticPaths() {
-    return {
-        paths: [],
-        fallback: 'blocking' 
-      };    
-}
-
-export async function getStaticProps({ params }) {
-    const res = await fetch(`https://www.breakingbadapi.com/api/characters/${params.id}`)
-    .then(r => r.json())
-
-    if(!res[0]) {
-        return {
-            props: {
-                error: true
-            }
-        }
-    }
-
-    return {
-        props: {
-            charInfo: res[0],
-            charOcuppations: res[0].occupation
-        }
-    }
-}  
-
 /* export async function getStaticPaths() {
     const chars = await getAllCharacters()
     const paths = []
@@ -129,7 +97,7 @@ export async function getStaticProps({ params }) {
         revalidate: 1
     }
 }  
- 
+ */
 export async function getServerSideProps({ params }) {
     const { charInfo, charOcuppations } = await getCharacterInfo(params.id)
 
@@ -140,4 +108,3 @@ export async function getServerSideProps({ params }) {
         }
     }
 }  
-*/
