@@ -7,6 +7,7 @@ import { ImHeart, ImHeartBroken } from 'react-icons/im'
 import { BsArrow90DegLeft, BsArrow90DegRight } from 'react-icons/bs'
 
 export default function CharPage({ charInfo, charOcuppations }) {
+    console.log(charOcuppations);
     return(
         <div className={styles.charPage}>
             <div className={styles.imageContainer}>
@@ -82,7 +83,7 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: true 
+        fallback: false 
       };    
 }
 
