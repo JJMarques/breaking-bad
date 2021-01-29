@@ -5,10 +5,17 @@ import { MdKeyboardReturn } from 'react-icons/md'
 import { BiCake } from 'react-icons/bi'
 import { ImHeart, ImHeartBroken } from 'react-icons/im'
 import { BsArrow90DegLeft, BsArrow90DegRight } from 'react-icons/bs'
+import Head from 'next/head'
 
 export default function CharPage({ charInfo, charOcuppations }) {
     return(
         <div className={styles.charPage}>
+            <Head>
+                <title>{charInfo.name} - Breaking Bad</title>
+                <meta name="description" content={`Information about Breaking Bad character ${charInfo.name}.`} />
+                <meta property="og:title" content={`${charInfo.name} - Breaking Bad`} />
+                <meta property="og:description" content={`Information about Breaking Bad character ${charInfo.name}.`} />
+            </Head>
             <div className={styles.imageContainer}>
                 <img src={charInfo.img} alt={charInfo.name} />
             </div>
