@@ -21,7 +21,7 @@ export default function CharPage({ charInfo, charOcuppations }) {
             </div>
             <div className={styles.charInfo}>
                 <Link href="/">
-                    <a>
+                    <a className={styles.returnBtn}>
                         <MdKeyboardReturn style={{ marginRight: '10px' }} />RETURN
                     </a>
                 </Link>
@@ -42,7 +42,7 @@ export default function CharPage({ charInfo, charOcuppations }) {
                             marginTop: '1em',
                             display: 'flex', 
                             alignItems: 'center',
-                            fontWeight: '200',
+                            fontWeight: '400',
                             color: '#ff6b6b'
                         }}>
                             <ImHeart style={{ marginRight: '10px' }} /> Alive
@@ -52,7 +52,7 @@ export default function CharPage({ charInfo, charOcuppations }) {
                             marginTop: '1em',
                             display: 'flex', 
                             alignItems: 'center',
-                            fontWeight: '200',
+                            fontWeight: '400',
                             color: '#696969'
                         }}>
                             <ImHeartBroken style={{ marginRight: '10px' }} /> Dead

@@ -1,7 +1,7 @@
 export default function SearchInputComponent({ searchInput, setSearchInput }) {
     return(
         <>
-            <label> Search for a Breaking Bad character
+            <label> Say my name.
                 <input 
                     autoFocus
                     type="search" 
